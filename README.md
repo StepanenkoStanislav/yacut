@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 В директории _yacut_ необходимо создать файл _.env_
 (Пример находится в yacut/example.env), где необходимо указать:
-```
+```python
 FLASK_APP=yacut - определяем, как запустить приложение
 FLASK_ENV=production - определяем режим работы (production или development)
 SECRET_KEY=b'_5#y2L"F4Q8z\n\xec]/' - указываем секретный ключ (это должна
