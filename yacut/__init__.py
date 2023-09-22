@@ -22,5 +22,3 @@ app.register_blueprint(swaggerui_blueprint)
 
 
 from yacut import forms, models, views, api_views, error_handlers
-
-db.create_all()
