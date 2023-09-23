@@ -1,4 +1,6 @@
-from flask import abort, redirect, request, render_template, flash, url_for
+from http import HTTPStatus
+
+from flask import redirect, request, render_template, flash, url_for
 
 from yacut import app
 from yacut.exceptions import URLMapNotFoundError
@@ -26,16 +28,15 @@ def get_short_link():
         return render_template(
             'get_short_link.html',
             form=form,
-            url=request.root_url + custom_id)
+            url=request.root_url + custom_id
+        )
     return render_template('get_short_link.html', form=form)
 
 
 @app.route('/<string:short_id>', methods=['GET'])
 def redirect_to_original(short_id):
     if not is_only_letters_and_digits(short_id):
-        raise URLMapNotFoundError('Указанный id не найден', 404)
-    urlmap = URLMap.query.filter_by(short=short_id).first()
-    if not urlmap:
-        flash('Ссылка не найдена')
-        abort(404)
-    return redirect(urlmap.original), 302
+        raise URLMapNotFoundError(
+            'Указанный id не найден', HTTPStatus.NOT_FOUND)
+    urlmap = URLMap.query.filter_by(short=short_id).first_or_404()
+    return redirect(urlmap.original), HTTPStatus.FOUND

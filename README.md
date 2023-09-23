@@ -63,7 +63,7 @@ FLASK_RUN_HOST=127.0.0.1 - указываем хост
 FLASK_RUN_PORT=5000 - указываем порт
 ```
 
-## Запуск
+### Запуск
 
 Находясь в директории _yacut_ введите в терминале команду
 ```commandline
@@ -73,6 +73,32 @@ flask run
 
 Описание ендпоинтов API по умолчанию будет доступно по адресу 
 http://127.0.0.1:5000/api/docs
+
+### Примеры запросов
+
+- POST запрос к /api/id/ - создание короткой ссылки
+```
+{
+  "url": "https://docs.python.org/3/whatsnew/3.11.html",
+  "custom_id": "whatsnew"
+}
+```
+Ответ
+```
+{
+  "url": "https://docs.python.org/3/whatsnew/3.11.html",
+  "short_link": "whatsnew"
+}
+```
+
+- GET запрос к /api/id/{short_id}/ - получение исходной ссылки
+
+Ответ на запрос /api/id/whatsnew/
+```
+{
+  "url": "https://docs.python.org/3/whatsnew/3.11.html"
+}
+```
 
 ## Технологии
 

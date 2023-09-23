@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from flask import jsonify, request
 
 from yacut import app
@@ -22,15 +24,19 @@ def api_get_short_url():
         custom_id = get_unique_custom_id()
     urlmap = URLMap(original=original, short=custom_id)
     add_urlmap_to_db(urlmap)
-    return jsonify(
-        dict(short_link=request.root_url + urlmap.short, url=original)), 201
+    return (
+        jsonify(
+            dict(short_link=request.root_url + urlmap.short, url=original)),
+        HTTPStatus.CREATED)
 
 
 @app.route('/api/id/<string:short_id>/', methods=['GET'])
 def api_redirect_to_original(short_id: str):
     if not is_only_letters_and_digits(short_id):
-        raise URLMapNotFoundError('Указанный id не найден', 404)
+        raise URLMapNotFoundError(
+            'Указанный id не найден', HTTPStatus.NOT_FOUND)
     urlmap = URLMap.query.filter_by(short=short_id).first()
     if not urlmap:
-        raise URLMapNotFoundError('Указанный id не найден', 404)
+        raise URLMapNotFoundError(
+            'Указанный id не найден', HTTPStatus.NOT_FOUND)
     return jsonify(dict(url=urlmap.original))
