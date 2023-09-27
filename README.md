@@ -102,12 +102,13 @@ http://127.0.0.1:5000/api/docs
 
 ## Технологии
 
-В проекте используются следующие технологии:
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="python" alt="python" width="40" height="40"/>&nbsp
   <img src="https://github.com/devicons/devicon/blob/master/icons/flask/flask-original.svg" title="flask" alt="flask" width="40" height="40"/>&nbsp
   <img src="https://github.com/devicons/devicon/blob/master/icons/sqlalchemy/sqlalchemy-original.svg" title="sqlalchemy" alt="sqlalchemy" width="40" height="40"/>&nbsp
 </div>
+
+В проекте используются следующие технологии:
 
 - Python 3.7
 - Flask 2.0.2
@@ -115,4 +116,4 @@ http://127.0.0.1:5000/api/docs
 
 ## Автор
 
-[Степаненко Станислав](https://t.me/tme_zoom)
+[![Telegram Badge](https://img.shields.io/badge/StepanenkoStanislav-blue?logo=telegram&logoColor=white)](https://t.me/tme_zoom) [![Gmail Badge](https://img.shields.io/badge/-Gmail-red?style=flat&logo=Gmail&logoColor=white)](mailto:stepanenko.s.a.dev@gmail.com)
