@@ -103,6 +103,12 @@ http://127.0.0.1:5000/api/docs
 ## Технологии
 
 В проекте используются следующие технологии:
+<div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="python" alt="python" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/flask/flask-original.svg" title="flask" alt="flask" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/sqlalchemy/sqlalchemy-original.svg" title="sqlalchemy" alt="sqlalchemy" width="40" height="40"/>&nbsp
+</div>
+
 - Python 3.7
 - Flask 2.0.2
 - SQLAlchemy 1.4.29
